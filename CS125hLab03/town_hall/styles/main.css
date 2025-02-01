@@ -1,8 +1,7 @@
 /* 
 Name: Ryan McClintock
-Date: January 23, 2025 
-Class: CS 125H - Lab 2 
--->
+Date: January 31, 2025 
+Class: CS 125H - Lab 3 
 */
 
 /* Global color application */
@@ -35,17 +34,29 @@ header h3 {
     text-indent: 30px;
 }
 
-a:hover, a:focus {
-	font-style: italic;
-}
-
+/* Text shadow for '75th' */
 .shadow {
     text-shadow: 2px 2px 4px #800000;
 }
 
-/* the styles for the section */
+/* the styles for the main content */
 main {
 	clear: left;
+}
+main h1 {
+	font-size: 150%;
+}
+main h2 {
+	color: var(--global-color-1);
+	font-size: 130%;
+}
+main h3 {
+	font-size: 105%;
+}
+
+/* Italicize links on hover or focus */
+a:hover, a:focus {
+	font-style: italic;
 }
 
 /* the styles for the footer */
