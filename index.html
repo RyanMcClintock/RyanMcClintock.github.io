@@ -10,42 +10,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knob Hill Studios</title>
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-        }
-        header {
-            padding: 20px;
-        }
-        img {
-            max-width: 200px;
-        }
-        main {
-            margin: 20px;
-        }
-        section {
-            margin-bottom: 20px;
-        }
-        footer {
-            margin-top: 40px;
-            font-size: 0.8em;
-        }
-        a {
-            color: #ffd700; /* Standout color for black background */
-            text-decoration: none;
-        }
-    </style>
+    <link rel="shortcut icon" href="images/favicon.ico">   
 </head>
 <body>
     <header>
         <img src="images/back.jpg" alt="Knob Hill Studios Logo">
-        <h1>Knob Hill Studios</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
     </header>
 
     <main>
@@ -60,7 +35,7 @@
                 leveraging state-of-the-art technology, traditional craftsmanship, and a keen eye for detail.
                 Feel free to explore our work and reach out if you’d like to collaborate.
             </p>
-            <p>
+            <p class="highlight">
                 For more inspiration, visit 
                 <a href="https://www.woodmagazine.com/" target="_blank">Wood Magazine</a> 
                 for tips and trends in the woodworking world.
@@ -69,7 +44,7 @@
 
         <section>
             <h2>Our Services</h2>
-            <article>
+            <article class="highlight">
                 <h3>Woodworking</h3>
                 <p>
                     We craft <strong>bespoke furniture</strong> using high-quality wood. From cabinets to
@@ -77,7 +52,7 @@
                     with meticulous attention to detail.
                 </p>
             </article>
-            <article>
+            <article class="highlight">
                 <h3>Design and Prototyping</h3>
                 <p>
                     With tools like our <em>100W CNC laser cutter</em> and 3D printers, we offer rapid
@@ -87,7 +62,7 @@
             </article>
         </section>
 
-        <section>
+        <section id="contact-section">
             <h2>Contact Us</h2>
             <p>
                 Email: 
