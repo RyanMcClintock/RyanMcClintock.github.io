@@ -7,14 +7,18 @@ Class: CS 125H - Lab 3
 /* Font imported from the googs */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 /* Globals */
 body {
     font-family: 'Roboto', sans-serif; /* More cleaner and moderner */
     font-size: 1em;
     margin: 0;
     padding: 0;
-    background-color: #000;
-    color: #fff;
+    background: linear-gradient(120deg, #1b1b1b 0%, #2b2b2b 100%);
+    color: #e0e0e0;
 }
 
 /* Constant to all paragraphs */
@@ -22,30 +26,31 @@ p {
     font-size: 1.1em;
     line-height: 1.6;
     margin-bottom: 15px;
+    color: #ccc;
 }
 
 /* Poppins font from the googs for the headings */
 h1, h2, h3 {
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
+    color: #d8a24a;
 }
 
 /* Pseudo-Element for styling the first letter of paragraphs only */
 p::first-letter {
-    font-size: 1.2em;
+    font-size: 1.0em;
     font-weight: normal;
-    color: #d16218; /* Matches link color for consistency */
+    color: #d8a24a; /* Matches link color for consistency */
 }
 
 /* Nested for paragraphs inside section elements */
 section p {
-    font-style: italic;
-
+    font-style: normal;
 }
 
 /* Applies only to article elements */
 article p {
-    font-weight: bold;
+    font-weight: normal;
 }
 
 /* Header style */
@@ -53,70 +58,83 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
-    background-color: #222;
+    padding: 10px;
+    background-color: #030404;
+    border-bottom: 2px solid #222;
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    width: 250px;
+    height: auto;
+    margin-bottom: 0px;
 }
 
 /*  trying to get everything spaced and slightly lower work in progress*/
 nav {
     display: flex;
     align-items: center; 
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 /* Style for menu links - was trying some things */
 nav a {
     font-size: 1.2em;
     font-family: 'Poppins', sans-serif;
-    color: #ffa500;
+    color: #d8a24a;
     text-decoration: none;
     margin-left: 25px;
     padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Hover effect - proto*/
 nav a:hover {
-    color: #ffb347;
-    text-decoration: underline;
+    background-color: #d8a24a;
+    color: #030404;
+    text-decoration: none;
+    border-radius: 4px;
 }
 
 /* Header image tweak */
 header img {
-    max-width: 300px;
+    max-width: 500px;
     height: auto;
     margin-left: 0;
 }
 /* Main content */
 main {
     margin: 20px;
+    padding: 0 20px;
 }
 
 /* Section spacing for bars*/
 section {
     margin-bottom: 20px;
     padding: 15px;
-    border: 1px solid #444;
+    border: 1px solid #333;
     border-radius: 5px;
-    background-color: #111;
+    background-color: #181818;
 }
 
 /* Pseudo-Class for background change on hover */
 section:hover {
-    background-color: #222;
+    background-color: #212121;
+    transition: background-color 0.5s;
 }
 
 /* Pseudo-Element: Add a small decorative element after each h2 */
 h2::after {
     content: " »";
-    color: #d16218;
+    color: #e3b665;
     margin-left: 5px;
 }
 
 /* ID Selector / Styling for the contact section */
 #contact-section {
-    background-color: #111;
+    background-color: #181818;
     padding: 15px;
-    border: 1px solid #d16218;
+    border: 1px solid #d8a24a;
     border-radius: 8px;
     text-align: center;
 }
@@ -125,42 +143,38 @@ h2::after {
 #contact-section a {
     font-weight: bold;
     font-size: 1.2em;
+    color: #d8a24a;
 }
 
 /* Links */
 a {
-    color: #ffa500;
+    color: #d8a24a;
     text-decoration: none;
 }
 
 /* Pseudo-Class: Change link appearance when hovered or focused */
 a:hover, a:focus {
     text-decoration: underline;
-    color: #ffb347;
+    color: #e3b665;
 }
 
 /* Footer */
 footer {
     margin-top: 40px;
     font-size: 0.8em;
-    color: #bbb;
+    color: #aaa;
+    text-align: center;
+    padding: 10px;
+    background-color: #181818;
+    border-top: 2px solid #333;
 }
 
 /* Class selector to highlight "important" elements */
 .highlight {
     background-color: #222;
-    border-left: 4px solid #d16218;
+    border-left: 4px solid #d8a24a;
     padding: 10px;
-    border-radius: 5px;
-}
-
-h1 {
-    color: #ff7f11;
-    padding: 10px 0; /* Spacing above and below */
-}
-
-h2, h3 {
-    color: #d16218; /* Slightly darker than h1 */
+    border-radius: 10px;
 }
 
 article {
