@@ -146,7 +146,7 @@ footer {
     color: #bbb;
 }
 
-/* Class selector to highlight important elements */
+/* Class selector to highlight "important" elements */
 .highlight {
     background-color: #222;
     border-left: 4px solid #d16218;
