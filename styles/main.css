@@ -4,12 +4,20 @@ Date: January 31, 2025
 Class: CS 125H - Lab 3 
 */
 
+/* ----------------------------------------------------
+   1. Imports / Global Resets
+---------------------------------------------------- */
+
 /* Font imported from the googs */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400&display=swap');
 
 * {
     box-sizing: border-box;
 }
+
+/* ----------------------------------------------------
+   2. Base / Global Styles
+---------------------------------------------------- */
 
 /* Globals */
 body {
@@ -21,6 +29,23 @@ body {
     color: #e0e0e0;
 }
 
+/* Links */
+a {
+    color: #d8a24a;
+    text-decoration: none;
+}
+
+/* Pseudo-Class: Change link appearance when hovered or focused */
+a:hover,
+a:focus {
+    text-decoration: underline;
+    color: #e3b665;
+}
+
+/* ----------------------------------------------------
+   3. Typography
+---------------------------------------------------- */
+
 /* Constant to all paragraphs */
 p {
     font-size: 1.1em;
@@ -30,7 +55,8 @@ p {
 }
 
 /* Poppins font from the googs for the headings */
-h1, h2, h3 {
+h2,
+h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     color: #d8a24a;
@@ -38,20 +64,20 @@ h1, h2, h3 {
 
 /* Pseudo-Element for styling the first letter of paragraphs only */
 p::first-letter {
-    font-size: 1.0em;
-    font-weight: normal;
+    font-size: 1.2em;
     color: #d8a24a; /* Matches link color for consistency */
 }
 
-/* Nested for paragraphs inside section elements */
-section p {
-    font-style: normal;
+/* Pseudo-Element: Add a small decorative element after each h2 */
+h2::after {
+    content: " »";
+    color: #e3b665;
+    margin-left: 5px;
 }
 
-/* Applies only to article elements */
-article p {
-    font-weight: normal;
-}
+/* ----------------------------------------------------
+   4. Layout & Structural Elements
+---------------------------------------------------- */
 
 /* Header style */
 header {
@@ -70,11 +96,10 @@ header {
     margin-bottom: 0px;
 }
 
-/*  trying to get everything spaced and slightly lower work in progress*/
+/*  Trying to get everything spaced and slightly lower work in progress */
 nav {
     display: flex;
-    align-items: center; 
-    margin-bottom: 0px;
+    align-items:end; 
 }
 
 /* Style for menu links - was trying some things */
@@ -88,7 +113,7 @@ nav a {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Hover effect - proto*/
+/* Hover effect - proto */
 nav a:hover {
     background-color: #d8a24a;
     color: #030404;
@@ -96,19 +121,13 @@ nav a:hover {
     border-radius: 4px;
 }
 
-/* Header image tweak */
-header img {
-    max-width: 500px;
-    height: auto;
-    margin-left: 0;
-}
 /* Main content */
 main {
     margin: 20px;
     padding: 0 20px;
 }
 
-/* Section spacing for bars*/
+/* Section spacing for bars */
 section {
     margin-bottom: 20px;
     padding: 15px;
@@ -123,12 +142,14 @@ section:hover {
     transition: background-color 0.5s;
 }
 
-/* Pseudo-Element: Add a small decorative element after each h2 */
-h2::after {
-    content: " »";
-    color: #e3b665;
-    margin-left: 5px;
+/* Applies to the "Our Services" (article) section */
+article {
+    margin-bottom: 20px; /* To add spacing to "Our Services" section looks cleaner */
 }
+
+/* ----------------------------------------------------
+   5. Specific IDs & Classes
+---------------------------------------------------- */
 
 /* ID Selector / Styling for the contact section */
 #contact-section {
@@ -146,19 +167,18 @@ h2::after {
     color: #d8a24a;
 }
 
-/* Links */
-a {
-    color: #d8a24a;
-    text-decoration: none;
+/* Class selector to highlight "important" elements */
+.highlight {
+    background-color: #222;
+    border-left: 4px solid #d8a24a;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-/* Pseudo-Class: Change link appearance when hovered or focused */
-a:hover, a:focus {
-    text-decoration: underline;
-    color: #e3b665;
-}
+/* ----------------------------------------------------
+   6. Footer
+---------------------------------------------------- */
 
-/* Footer */
 footer {
     margin-top: 40px;
     font-size: 0.8em;
@@ -169,14 +189,6 @@ footer {
     border-top: 2px solid #333;
 }
 
-/* Class selector to highlight "important" elements */
-.highlight {
-    background-color: #222;
-    border-left: 4px solid #d8a24a;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-article {
-    margin-bottom: 20px; /* To add spacing to "Our Services" section looks cleaner */
-}
+/* ----------------------------------------------------
+   7. Test Additions
+---------------------------------------------------- */
