@@ -1,52 +1,53 @@
 /*
 Name: Ryan McClintock
-Date: January 31, 2025 
-Class: CS 125H - Lab 3 
+Date: February 13, 2025 
+Class: CS 125H - Lab 5 
 */
-
-/* ----------------------------------------------------
-   1. Imports / Global Resets
----------------------------------------------------- */
 
 /* Font imported from the googs */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400&display=swap');
 
+/* Resetting margins and padding to the layout to be consistent */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* ----------------------------------------------------
-   2. Base / Global Styles
----------------------------------------------------- */
+/* Google told me I should do this to fix floating elements */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
-/* Globals */
+/* Global body styles 
+======================================================================
+*/
 body {
     font-family: 'Roboto', sans-serif; /* More cleaner and moderner */
     font-size: 1em;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(120deg, #1b1b1b 0%, #2b2b2b 100%);
-    color: #e0e0e0;
+    background: #eee8e8;
 }
 
-/* Links */
+/* Link styling 
+======================================================================
+*/
 a {
     color: #d8a24a;
     text-decoration: none;
 }
 
-/* Pseudo-Class: Change link appearance when hovered or focused */
 a:hover,
 a:focus {
     text-decoration: underline;
     color: #e3b665;
 }
 
-/* ----------------------------------------------------
-   3. Typography
----------------------------------------------------- */
 
-/* Constant to all paragraphs */
+/* Paragraph styling
+======================================================================
+*/
 p {
     font-size: 1.1em;
     line-height: 1.6;
@@ -54,7 +55,7 @@ p {
     color: #ccc;
 }
 
-/* Poppins font from the googs for the headings */
+/* Header fonts for yeah */
 h2,
 h3 {
     font-family: 'Poppins', sans-serif;
@@ -62,109 +63,88 @@ h3 {
     color: #d8a24a;
 }
 
-/* Pseudo-Element for styling the first letter of paragraphs only */
 p::first-letter {
     font-size: 1.2em;
     color: #d8a24a; /* Matches link color for consistency */
 }
 
-/* Pseudo-Element: Add a small decorative element after each h2 */
-h2::after {
-    content: " »";
-    color: #e3b665;
-    margin-left: 5px;
-}
-
-/* ----------------------------------------------------
-   4. Layout & Structural Elements
----------------------------------------------------- */
-
-/* Header style */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
+    padding: 5px;
     background-color: #030404;
     border-bottom: 2px solid #222;
-    margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .logo-img {
     width: 250px;
     height: auto;
-    margin-bottom: 0px;
+    float: left;
 }
 
-/*  Trying to get everything spaced and slightly lower work in progress */
+
+/* Nav section 
+======================================================================
+*/
 nav {
-    display: flex;
-    align-items:end; 
+    float: right;
+    margin-top: 75px;
+    margin-right: 25px;
 }
 
-/* Style for menu links - was trying some things */
 nav a {
-    font-size: 1.2em;
-    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
     color: #d8a24a;
     text-decoration: none;
-    margin-left: 25px;
-    padding: 5px 10px;
+    margin-left: 20px;
+    padding: 15px 10px;
+    display: inline-block;
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Hover effect - proto */
 nav a:hover {
     background-color: #d8a24a;
     color: #030404;
-    text-decoration: none;
     border-radius: 4px;
 }
 
-/* Main content */
+/* not currently being used 
+======================================================================
+*/
 main {
     margin: 20px;
     padding: 0 20px;
+    clear: both;
 }
 
-/* Section spacing for bars */
 section {
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #333;
-    border-radius: 5px;
-    background-color: #181818;
+    margin-bottom: 5px;
+    padding: 5px;
 }
 
-/* Pseudo-Class for background change on hover */
-section:hover {
-    background-color: #212121;
-    transition: background-color 0.5s;
-}
-
-/* Applies to the "Our Services" (article) section */
-article {
-    margin-bottom: 20px; /* To add spacing to "Our Services" section looks cleaner */
-}
-
-/* ----------------------------------------------------
-   5. Specific IDs & Classes
----------------------------------------------------- */
-
-/* ID Selector / Styling for the contact section */
+/* Contact Section
+======================================================================
+*/
 #contact-section {
-    background-color: #181818;
-    padding: 15px;
-    border: 1px solid #d8a24a;
+    background-color: #f9f9f9; 
+    padding: 20px;
+    border: 2px solid #d8a24a;
     border-radius: 8px;
     text-align: center;
+    color: #333;
 }
 
-/* Bolding email to have it stand out a lil more */
+#contact-section h2 {
+    color: #b37c28;
+}
+
 #contact-section a {
     font-weight: bold;
     font-size: 1.2em;
-    color: #d8a24a;
+    color: #b37c28;
+}
+
+#contact-section a:hover {
+    color: #555;
 }
 
 /* Class selector to highlight "important" elements */
@@ -175,10 +155,9 @@ article {
     border-radius: 10px;
 }
 
-/* ----------------------------------------------------
-   6. Footer
----------------------------------------------------- */
-
+/*Footer Section
+======================================================================
+*/
 footer {
     margin-top: 40px;
     font-size: 0.8em;
@@ -189,6 +168,175 @@ footer {
     border-top: 2px solid #333;
 }
 
-/* ----------------------------------------------------
-   7. Test Additions
----------------------------------------------------- */
+.footer-contact {
+    text-align: center;
+    background: #f4f4f4; /* Lighter background */
+    padding: 20px;
+    border-top: 3px solid #d8a24a;
+    color: #333;
+}
+
+.footer-contact h2 {
+    font-size: 1.5em;
+    color: #b37c28;
+}
+
+.footer-contact p {
+    font-size: 1.1em;
+    margin: 8px 0;
+    color: #444;
+}
+
+.footer-contact a {
+    color: #b37c28;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+    color: #555;
+}
+
+.fixed-contact {
+    position: fixed;
+    bottom: 50px; /* higher to get off of the edge */
+    right: 20px;
+    background: #d8a24a;
+    color: #030404;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1em;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.fixed-contact:hover {
+    background: #030302;
+    transform: scale(1.05);
+}
+
+/* Banner "Hero" Section
+======================================================================
+*/
+.hero {
+    width: 100vw;
+    height: 30vh; /* only showing partial image vertically*/
+    position: relative;
+    overflow: hidden;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding: 0;
+    border: none;
+    border-radius: 0;         /* Remove rounded borders - override*/
+    background-color: transparent; /* Remove background color - override */
+}
+
+/* Hero/banner images */
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 2s ease-in-out; 
+}
+/* Total slide time x*slide count */
+.slide {
+    animation: slideshow 35s ease-in-out infinite; 
+}
+
+/* slide time/total slides */
+.hero img:nth-child(1) { animation-delay:  0s; }
+.hero img:nth-child(2) { animation-delay:  5s; }
+.hero img:nth-child(3) { animation-delay: 10s; }
+.hero img:nth-child(4) { animation-delay: 15s; }
+.hero img:nth-child(5) { animation-delay: 20s; }
+.hero img:nth-child(6) { animation-delay: 25s; }
+.hero img:nth-child(7) { animation-delay: 30s; }
+
+/* DON'T TOUCH THESE OR STUFF GET WoNkY */
+@keyframes slideshow {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; } 
+  40%  { opacity: 1; } 
+  50%  { opacity: 0; }  
+  100% { opacity: 0; }
+}
+
+/* Welcom styling
+======================================================================
+*/
+.welcome {
+    text-align: center;
+    background-color: #eee8e8; 
+    padding: 40px 30px;
+    margin: 40px auto;
+    max-width: 1200px; 
+}
+
+.welcome h2 {
+    color: #b37c28;
+    font-size: 1.6em;
+}
+
+.welcome p {
+    font-size: 1.2em;
+    color: #444; 
+    line-height: 1.6;
+    max-width: 1000px;
+    margin: 0 auto 15px auto;
+    text-align: left;
+}
+
+/* Split Parent */
+.split-section {
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 50px auto;
+    gap: 5%;
+}
+
+/* Each item (Cutting Boards & Oils & Waxes) */
+.split-item {
+    width: 48%; 
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Images below text */
+.split-item img {
+    float:left;
+    width: 100%;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.split-section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Mobile improvements testing */
+@media (max-width: 768px) {
+    .split-section {
+        flex-direction: column; /* Stacks them vertically */
+        gap: 20px;
+    }
+
+    .split-item {
+        width: 100%; /* Full width on small screens */
+    }
+}

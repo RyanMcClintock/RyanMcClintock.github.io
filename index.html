@@ -3,16 +3,17 @@
 <head>
     <!-- 
       Name: Ryan McClintock
-      Date: February, 2025 
-      Class: CS 125H - Lab 4 
+      Date: February 13, 2025 
+      Class: CS 125H - Lab 5 
     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Knob Hill Studios offers custom woodworking design and rapid prototyping services,">
+    <meta name="description" content="KnobHill Studios offers custom woodworking design and rapid prototyping services,">
     <title>Knob Hill Studios</title>
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
     <header>
         <a href="index.html">
@@ -27,57 +28,66 @@
           <a href="about.html">About</a>
         </nav>
     </header>
+    <section class="hero">
+        <img src="images/banners/banner1.jpeg" alt="banner 1" class="slide">
+        <img src="images/banners/banner2.jpeg" alt="banner 2" class="slide">
+        <img src="images/banners/banner3.jpeg" alt="banner 3" class="slide">
+        <img src="images/banners/banner4.jpeg" alt="banner 4" class="slide">
+        <img src="images/banners/banner5.jpeg" alt="banner 5" class="slide">
+        <img src="images/banners/banner6.jpeg" alt="banner 6" class="slide">
+        <img src="images/banners/banner7.jpeg" alt="banner 7" class="slide">
+    </section>
 
+    <section class="welcome">
+        <h2>KnobHill Studios</h2>
+        <p>
+            KnobHill Studios was founded in 2022 with a focus on precision craftsmanship, blending traditional
+            woodworking with modern technology. We design and build high-quality cutting boards, furniture, custom woodwork,
+            and laser-engraved pieces - all made from sustainably sourced, and locally harvested wood species whenever possible.
+        </p>
+        <p>
+            Alongside our woodworking, we produce our own plant-based cutting board and wood utensil wax & oil, 
+            formulated to protect and extend the life of any natural wood kitchen items, or any other natural wood
+            items you can think of. Whether you're looking for a durable, handcrafted board or a natural way to maintain 
+            it, we have you covered there.
+        </p>
+    </section>
+
+    <section class="split-section">
+        <article class="split-item">
+            <h2>Cutting Boards</h2>
+            <p>
+                Our handcrafted cutting boards are made from sustainably sourced, high-quality hardwoods, ensuring durability 
+                and elegance in your kitchen. Each piece is designed with precision, making it both functional and visually appealing.
+            </p>
+            <img src="images/cutting-board.jpeg" alt="Handmade Cutting Board">
+        </article>
+    
+        <article class="split-item">
+            <h2>Oils & Waxes</h2>
+            <p>
+                Keep your wooden kitchenware in top condition with our plant-based oils and waxes. Designed to protect and 
+                extend the life of your cutting boards and utensils, our conditioning formulas keep your wood nourished and 
+                looking beautiful. Our oils and waxes contain zero petroleum products and were not manufactured with solvents.
+            </p>
+            <img src="images/oils-waxes.jpeg" alt="Wood Care Oils and Waxes">
+        </article>
+    </section>
     <main>
-        <section>
-            <h2>About Knob Hill Studios</h2>
-            <p>
-                Welcome to Knob Hill Studios, a creative hub for woodworking, design, and rapid prototyping.
-                Whether you're looking for custom furniture or prototype production, we're here to help.
-            </p>
-            <p>
-                We are passionate about creating <strong>functional</strong> and <em>beautiful</em> designs,
-                leveraging state-of-the-art technology, traditional craftsmanship, and a keen eye for detail.
-                Feel free to explore our work and reach out if you’d like to collaborate.
-            </p>
-            <p class="highlight">
-                For more inspiration, visit 
-                <a href="https://www.woodmagazine.com/" target="_blank">Wood Magazine</a> 
-                for tips and trends in the woodworking world.
-            </p>
-        </section>
 
-        <section>
-            <h2>Our Services</h2>
-            <article class="highlight">
-                <h3>Woodworking</h3>
-                <p>
-                    We craft bespoke furniture using high-quality wood. From cabinets to
-                    tables and chairs, or even end-grain cutting boards, we bring your ideas to life
-                    with meticulous attention to detail.
-                </p>
-            </article>
-            <article class="highlight">
-                <h3>Design and Prototyping</h3>
-                <p>
-                    With tools like our <em>100W CNC laser cutter</em> and 3D printers, we offer rapid
-                    prototyping and production for your creative projects. Whether you’re an inventor,
-                    artist, or hobbyist, we provide the resources to turn concepts into reality.
-                </p>
-            </article>
-        </section>
-
-        <section id="contact-section">
-            <h2>Contact Us</h2>
-            <p>
-                Email: 
-                <a href="mailto:ryan@knobhillstudios.com">ryan@knobhillstudios.com</a>
-            </p>
-        </section>
     </main>
 
     <footer>
+        <section class="footer-contact" id="contact-section">
+            <h2>Contact Us</h2>
+            <p>Email: <a href="mailto:ryan@knobhillstudios.com">ryan@knobhillstudios.com</a></p>
+            <p>Follow Us:
+                <a href="https://twitter.com/knobhillstudios" target="_blank">Twitter</a> |
+                <a href="https://instagram.com/knobhillstudios" target="_blank">Instagram</a>
+            </p>
+        </section>
         <p>&copy; 2025 Knob Hill Studios. All rights reserved.</p>
     </footer>
+    <a href="#contact-section" class="fixed-contact">Contact Us</a>
 </body>
 </html>
