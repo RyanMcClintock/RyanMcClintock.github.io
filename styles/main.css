@@ -25,6 +25,11 @@ html {
     clear: both;
 }
 
+header::after{
+    content: "";
+    display: table;
+    clear: both;
+}
 /* Global body styles 
 ======================================================================
 */
@@ -76,11 +81,11 @@ header {
     padding: 5px;
     background-color: #030404;
     border-bottom: 2px solid #222;
-    overflow: hidden;
+
 }
 
 .logo-img {
-    width: 250px;
+    width: 225px;
     height: auto;
     float: left;
 }
@@ -91,7 +96,7 @@ header {
 */
 nav {
     float: right;
-    margin-top: 75px;
+    margin-top: 50px;
     margin-right: 25px;
 }
 
@@ -100,7 +105,7 @@ nav a {
     color: #d8a24a;
     text-decoration: none;
     margin-left: 20px;
-    padding: 8px 10px;
+    padding: 5px 10px;
     display: inline-block;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -116,6 +121,38 @@ nav a.active {
     color: #030404;
     border-radius: 4px;
 }
+
+#navbar ul {
+    list-style: none;
+    position: relative;
+}
+
+#navbar ul li {
+    float: left;
+}
+
+#navbar ul ul {
+    display: none;
+    position:absolute;
+    top: 100%;
+}
+
+#navbar ul li:hover > ul {
+    display: block;
+}
+
+#navbar > ul::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#navbar ul li li {
+    float: none;
+    font-size: 12px;
+    text-align: center;
+}
+
 
 /* not currently being used 
 ======================================================================
