@@ -134,7 +134,10 @@ nav a.active {
 #navbar ul ul {
     display: none;
     position:absolute;
-    top: 100%;
+    text-align: left;
+    left: 25%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
 #navbar ul li:hover > ul {
@@ -150,7 +153,7 @@ nav a.active {
 #navbar ul li li {
     float: none;
     font-size: 12px;
-    text-align: center;
+    text-align: left;
 }
 
 
