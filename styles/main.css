@@ -14,6 +14,10 @@ Class: CS 125H - Lab 5
     padding: 0;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 /* Google told me I should do this to fix floating elements */
 .clearfix::after {
     content: "";
@@ -96,12 +100,18 @@ nav a {
     color: #d8a24a;
     text-decoration: none;
     margin-left: 20px;
-    padding: 15px 10px;
+    padding: 8px 10px;
     display: inline-block;
     transition: background-color 0.3s, color 0.3s;
 }
 
 nav a:hover {
+    background-color: #d8a24a;
+    color: #030404;
+    border-radius: 4px;
+}
+
+nav a.active {
     background-color: #d8a24a;
     color: #030404;
     border-radius: 4px;
@@ -223,7 +233,7 @@ footer {
 */
 .hero {
     width: 100vw;
-    height: 30vh; /* only showing partial image vertically*/
+    height: 20vh; /* only showing partial image vertically*/
     position: relative;
     overflow: hidden;
     margin-left: calc(-50vw + 50%);
