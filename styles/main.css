@@ -1,7 +1,7 @@
 /*
 Name: Ryan McClintock
-Date: February 13, 2025 
-Class: CS 125H - Lab 5 
+Date: February 20, 2025 
+Class: CS 125H - Lab 6 
 */
 
 /* Font imported from the googs */
@@ -267,7 +267,7 @@ footer {
 /* Banner "Hero" Section
 ======================================================================
 */
-.hero {
+section.hero {
     width: 100vw;
     height: 20vh; /* only showing partial image vertically*/
     position: relative;
