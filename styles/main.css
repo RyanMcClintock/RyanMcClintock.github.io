@@ -306,7 +306,7 @@ section.hero {
 .hero img:nth-child(6) { animation-delay: 25s; }
 .hero img:nth-child(7) { animation-delay: 30s; }
 
-/* DON'T TOUCH THESE OR STUFF GET WoNkY */
+/* DON'T TOUCH THESE OR STUFF MiGhT GeT WoNkY */
 @keyframes slideshow {
   0%   { opacity: 0; }
   10%  { opacity: 1; } 
