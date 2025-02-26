@@ -74,91 +74,110 @@ h3 {
 
 p::first-letter {
     font-size: 1.2em;
-    color: #d8a24a; /* Matches link color for consistency */
+    color: #d8a24a; 
 }
 
 header {
-    padding: 5px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
     background-color: #030404;
     border-bottom: 2px solid #222;
-
+    padding: 10px 20px;
+    height: auto;
 }
 
 .logo-img {
     width: 225px;
     height: auto;
-    float: left;
 }
 
 
 /* Nav section 
 ======================================================================
 */
-nav {
-    float: right;
-    margin-top: 50px;
-    margin-right: 25px;
-}
-
-nav a {
-    font-size: 1.1em;
-    color: #d8a24a;
-    text-decoration: none;
-    margin-left: 20px;
-    padding: 5px 10px;
-    display: inline-block;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-nav a:hover {
-    background-color: #d8a24a;
-    color: #030404;
-    border-radius: 4px;
-}
-
-nav a.active {
-    background-color: #d8a24a;
-    color: #030404;
-    border-radius: 4px;
+#navbar {
+    display: flex;
+    justify-content: right; /* Actual main Nav positioning */
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: flex-end;
 }
 
 #navbar ul {
+    flex-wrap: wrap;
+    display: flex;
     list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Spaces the main navbar */
+#navbar ul li {
+    padding: 0 10px;
     position: relative;
 }
 
-#navbar ul li {
-    float: left;
-}
-
+/* Dropdown positioning and formatting */
 #navbar ul ul {
     display: none;
     position:absolute;
+    top: 100%;
+    left: 0;
+    width: auto;
+    z-index: 1000;
+    background: rgba( 3, 4, 4, 0.6 ); /* Somewhat Transparent change last value to less for more */
+    border-radius: 10px;
+    padding: 5px 0;
+    backdrop-filter: blur(5px);
+    min-width: 150px;
 }
 
 #navbar ul li:hover > ul {
     display: block;
 }
 
-#navbar > ul::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-#navbar ul li li {
-    float: none;
-    font-size: 12px;
+#navbar ul ul li {
+    width: 100%;
     text-align: left;
 }
 
+/* Main Link Styling */
+#navbar ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #d8a24a;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-/* not currently being used 
+/* Link styling INSIDE Navbar */
+#navbar ul ul li a {
+    display: block;
+    padding: 8px 12px;
+    color: #d8a24a;
+    background: transparent; 
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#navbar ul ul li a:hover {
+    background-color: rgba(216, 162, 74, 0.3); /* Light goldish*/
+    color: #030404;
+}
+
+/* Main Section idk why I said not used before I am is dumb
 ======================================================================
 */
 main {
     margin: 20px;
     padding: 0 20px;
+    clear: both;
+}
+
+main::after {
+    content: "";
+    display: block;
     clear: both;
 }
 
@@ -379,10 +398,11 @@ section.hero {
 @media (max-width: 768px) {
     .split-section {
         flex-direction: column; /* Stacks them vertically */
-        gap: 20px;
+        text-align: center;
     }
 
     .split-item {
         width: 100%; /* Full width on small screens */
+        padding: 5px 0;
     }
 }
