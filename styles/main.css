@@ -104,6 +104,21 @@ header {
     align-items: flex-end;
 }
 
+/* Highlight the active link in the navbar */
+#navbar a.active {
+    background-color: #d8a24a;
+    color: #030404;     
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  
+  /* If you also want a hover effect for the active link */
+  #navbar a.active:hover {
+    background-color: #e3b665;
+    color: #030404;
+  }
+  
+
 #navbar ul {
     flex-wrap: wrap;
     display: flex;
@@ -114,7 +129,7 @@ header {
 
 /* Spaces the main navbar */
 #navbar ul li {
-    padding: 0 10px;
+    padding: 0 20px;
     position: relative;
 }
 
@@ -130,7 +145,7 @@ header {
     border-radius: 10px;
     padding: 5px 0;
     backdrop-filter: blur(5px);
-    min-width: 150px;
+    min-width: 175px;
 }
 
 #navbar ul li:hover > ul {
@@ -142,10 +157,10 @@ header {
     text-align: left;
 }
 
-/* Main Link Styling */
+/* Main Link Styling Text */
 #navbar ul li a {
     display: block;
-    padding: 10px 15px;
+    padding: 5px 10px;
     color: #d8a24a;
     text-decoration: none;
     transition: background-color 0.3s, color 0.3s;
@@ -154,7 +169,7 @@ header {
 /* Link styling INSIDE Navbar */
 #navbar ul ul li a {
     display: block;
-    padding: 8px 12px;
+    padding: 6px 10px;
     color: #d8a24a;
     background: transparent; 
     border-radius: 8px;
@@ -405,4 +420,42 @@ section.hero {
         width: 100%; /* Full width on small screens */
         padding: 5px 0;
     }
+}
+
+
+/* TABLE STYLING*/
+.pricing table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+/* Caption styling */
+.pricing table caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Head and foot styling */
+.pricing table thead {
+    background-color: #b37c28; /* Different background for the header */
+    color: #fff;
+}
+
+.pricing table tfoot {
+    background-color: #eee;
+    font-style: italic;
+}
+
+/* Basic styles */
+.pricing table th,
+.pricing table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.pricing table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Subtle background color for even rows */
 }
