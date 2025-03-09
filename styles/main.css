@@ -204,6 +204,10 @@ section {
 /* Contact Section
 ======================================================================
 */
+section h2 {
+    text-align: center;
+}
+
 #contact-section {
     background-color: #f9f9f9; 
     padding: 20px;
@@ -459,3 +463,63 @@ section.hero {
 .pricing table tbody tr:nth-child(even) {
     background-color: #f9f9f9; /* Subtle background color for even rows */
 }
+
+/* Contact Form Styling */
+#contactForm {
+    background-color: #f9f9f9;
+    border: 2px solid #d8a24a;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  #contactForm .form-group {
+    margin-bottom: 15px;
+  }
+  
+  #contactForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #d8a24a;
+  }
+  
+  #contactForm input[type="text"],
+  #contactForm input[type="email"],
+  #contactForm input[type="tel"],
+  #contactForm select,
+  #contactForm textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+  }
+  
+  /* Visual feedback for invalid fields */
+  #contactForm input:invalid,
+  #contactForm textarea:invalid,
+  #contactForm select:invalid {
+    border: 2px solid red;
+  }
+  
+  /* Submit button styling */
+  #contactForm input[type="submit"] {
+    background-color: #d8a24a;
+    color: #030404;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  #contactForm input[type="submit"]:hover {
+    background-color: #e3b665;
+    transform: scale(1.05);
+  }
+  
