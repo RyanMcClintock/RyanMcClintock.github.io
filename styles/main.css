@@ -1,7 +1,7 @@
 /*
 Name: Ryan McClintock
 Date: March 9, 2025 
-Class: CS 125H - Lab 8 
+Class: CS 125H - Final 
 */
 
 /* Font imported from the googs */
@@ -18,23 +18,18 @@ html {
     overflow-y: scroll;
 }
 
-/* Google told me I should do this to fix floating elements */
+/* Fixed this element should clear properly now */
 .clearfix::after {
     content: "";
     display: table;
     clear: both;
 }
 
-header::after{
-    content: "";
-    display: table;
-    clear: both;
-}
 /* Global body styles 
 ======================================================================
 */
 body {
-    font-family: 'Roboto', sans-serif; /* More cleaner and moderner */
+    font-family: 'Roboto', sans-serif; /* Clean and modern font */
     font-size: clamp(0.75rem, 2vw, 1.0rem);
     background: #eee8e8;
     color: #222;
@@ -98,99 +93,83 @@ header {
 /* Nav section 
 ======================================================================
 */
+/* Nav section - Simplified */
 #navbar {
     display: flex;
-    justify-content: flex-end; /* Actual main Nav positioning */
+    justify-content: flex-start;
     flex-wrap: wrap;
-    width: 100%;
-    align-items: flex-end;
+    align-items: center;
+    padding: 10px;
 }
-
-/* Highlight the active link in the navbar */
-#navbar a.active {
-    background-color: #d8a24a;
-    color: #030404;     
-    border-radius: 5px;
-    padding: 5px 10px;
-  }
-  
-  /* If you also want a hover effect for the active link */
-  #navbar a.active:hover {
-    background-color: #e3b665;
-    color: #030404;
-  }
-  
 
 #navbar ul {
-    flex-wrap: wrap;
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
-    padding: 0;
-    margin: 0;
+    gap: 10px;
 }
 
-/* Spaces the main navbar */
-#navbar ul li {
-    padding: 0 20px;
+#navbar li {
+    padding: 8px 12px;
     position: relative;
     transition: transform 0.3s ease;
 }
 
-/* Dropdown positioning and formatting */
-#navbar ul ul {
-    display: none;
-    position:absolute;
-    top: 100%;
-    left: 0;
-    width: auto;
-    z-index: 1000;
-    background: rgba( 3, 4, 4, 0.6 ); /* Somewhat Transparent change last value to less for more */
-    border-radius: 10px;
-    padding: 5px 0;
-    backdrop-filter: blur(5px);
-    min-width: 175px;
-}
-
-#navbar ul li:hover > ul {
-    display: block;
-}
-
-#navbar ul ul li {
-    width: 100%;
-    text-align: left;
-}
-
-/* Main Link Styling Text */
-#navbar ul li a {
+/* Base link styling */
+#navbar a {
     display: block;
     padding: 5px 10px;
     color: #d8a24a;
     text-decoration: none;
-    transition: background-color 0.3s, color 0.3s, padding 0.2s;
+    transition: all 0.3s ease;
+    border-radius: 5px;
 }
 
-/* Link styling INSIDE Navbar */
-#navbar ul ul li a {
-    display: block;
-    padding: 6px 10px;
-    color: #d8a24a;
-    background: transparent; 
-    border-radius: 8px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-/* Enhance the hover effect for all nav links */
-#navbar ul li a:hover {
-    background-color: rgba(216, 162, 74, 0.2); 
+#navbar a:hover {
+    background-color: rgba(216, 162, 74, 0.2);
     color: #e3b665;
-    border-radius: 5px;
     transform: translateY(-2px);
 }
 
-#navbar ul ul li a:hover {
-    background-color: rgba(216, 162, 74, 0.3);
-    padding-left: 15px; 
+/* Active link styling */
+#navbar a.active {
+    background-color: #d8a24a;
+    color: #030404;
 }
-/* Main Section idk why I said not used before I am is dumb
+
+#navbar a.active:hover {
+    background-color: #e3b665;
+}
+
+/* Dropdown menu */
+#navbar ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    background: rgba(3, 4, 4, 0.6);
+    border-radius: 10px;
+    padding: 5px 0;
+    backdrop-filter: blur(5px);
+    min-width: 175px;
+    flex-direction: column;
+}
+
+#navbar li:hover > ul {
+    display: block;
+}
+
+/* Dropdown links */
+#navbar ul ul a {
+    padding: 6px 10px;
+}
+
+#navbar ul ul a:hover {
+    background-color: rgba(216, 162, 74, 0.3);
+    padding-left: 15px;
+}
+/* Main Section 
 ======================================================================
 */
 main {
@@ -452,12 +431,7 @@ footer {
     clear: both;
 }
 
-/* Mobile improvements testing */
-@media (max-width: 1024px) {
-    .split-item {
-        width: 100%;
-    }
-}
+/* Mobile improvements */
 
 @media (max-width: 768px) {
     .split-section {

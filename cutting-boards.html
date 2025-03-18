@@ -12,8 +12,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
-            justify-content: center; /* Center the items */
-            max-width: 1000px; /* Adjust width as needed */
+            justify-content: center;
+            max-width: 1000px; 
             margin: 30px auto; /* Centers the gallery */
 }
 
@@ -421,7 +421,7 @@
                 return;
                 }
 
-                // Add options
+                // Added OPTIONS
                 if (juiceGrooveCheckbox.checked) {
                     price += 25;
                 }
@@ -434,7 +434,7 @@
                 priceDisplay.textContent = '$' + price.toFixed(2);
                 
                 // Update preview dimensions
-                // We're scaling down for display purposes
+                // Scaled for display reasons
                 const scale = Math.min(150 / width, 225 / length);
                 const displayWidth = width * scale;
                 const displayLength = length * scale;
@@ -442,7 +442,7 @@
                 boardPreview.style.width = displayWidth + 'px';
                 boardPreview.style.height = displayLength + 'px';
                 
-                // Add juice groove visual if selected
+                // Add juice groove visual if selected - Might get rid of this not sure yet don't want to add for each item
                 if (juiceGrooveCheckbox.checked) {
                     boardPreview.style.border = '2px solid #dbc192';
                     boardPreview.style.boxShadow = 'inset 0 0 0 3px #f5e8d0';
