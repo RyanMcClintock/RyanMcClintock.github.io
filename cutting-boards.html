@@ -2,11 +2,222 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Knob Hill Studios - Cutting Boards.">
+    <meta name="description" content="Knob Hill Studios - Custom Cutting Boards">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knob Hill Studios - Cutting Boards</title>
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            justify-content: center; /* Center the items */
+            max-width: 1000px; /* Adjust width as needed */
+            margin: 30px auto; /* Centers the gallery */
+}
+
+        
+        .product-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 15px;
+        }
+        
+        .product-title {
+            font-size: 1.2em;
+            color: #a36a1f;
+            margin-bottom: 8px;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: #b37c28;
+            margin-bottom: 12px;
+        }
+        
+        .product-description {
+            color: #555;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .add-to-cart {
+            background-color: #d8a24a;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #b37c28;
+            text-decoration: none;
+        }
+        
+        /* Custom Board Builder styles */
+        .board-builder {
+            background-color: #f9f9f9;
+            border: 2px solid #d8a24a;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 40px 0;
+        }
+        
+        .board-builder h3 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .builder-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .builder-form {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #b37c28;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .form-control:focus {
+            border-color: #d8a24a;
+            outline: none;
+        }
+        
+        .preview-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        
+        .board-preview {
+            margin: 0 auto;
+            background-color: #f5e8d0;
+            border: 2px solid #dbc192;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .price-display {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #b37c28;
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .features-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .features-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            color: #b37c28;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .order-button {
+            background-color: #b37c28;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+        
+        .order-button:hover {
+            background-color: #93661c;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 40px 0 20px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #d8a24a;
+            margin: 10px auto 0;
+        }
+        .selected {
+            background-color: #f7e1b5; /* Light highlight */
+            border-radius: 5px;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -31,17 +242,137 @@
               <li><a href="about.html">About</a></li>
             </ul>
           </nav>
-          
     </header>
-
+    
     <main>
         <section>
-            <h2>Cutting Boards</h2>
-            <p>
-                Content in the works
-            </p>
+            <h2 class="section-title">Our Cutting Boards</h2>
+            <p>Discover our collection of handcrafted maple cutting boards. Each piece is carefully made from sustainably sourced hardwood, ensuring both beauty and durability for your kitchen.</p>
+            
+            <div class="product-gallery">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/cutting-board.jpeg" alt="End Grain Maple Cutting Board">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">End Grain Maple Board - Small</h3>
+                        <div class="product-price">$150.00</div>
+                        <p class="product-description">Beautiful end grain maple cutting board. Measures 12" x 9" x 1.5". Perfect for everyday cutting tasks.</p>
+                        <a href="#" class="add-to-cart">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/cutting-board.jpeg" alt="End Grain Maple Cutting Board">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">End Grain Maple Board - Medium</h3>
+                        <div class="product-price">$300.00</div>
+                        <p class="product-description">Premium end grain maple cutting board. Measures 18" x 14" x 2". Perfect for serious home chefs.</p>
+                        <a href="#" class="add-to-cart">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/cutting-board.jpeg" alt="End Grain Maple Cutting Board">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">End Grain Maple Board - Large</h3>
+                        <div class="product-price">$600.00</div>
+                        <p class="product-description">Professional-grade end grain maple cutting board. Measures 24" x 18" x 3". Ideal for professional kitchens or passionate home cooks.</p>
+                        <a href="#" class="add-to-cart">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
         </section>
-        <!-- Text -->
+        
+        <section class="board-builder">
+            <h2 class="section-title">Custom Cutting Board Builder</h2>
+            <p>Design your perfect cutting board with our custom size calculator. Specify your exact dimensions for a board tailored to your needs.</p>
+            
+            <div class="builder-form">
+                <div>
+                    <div class="form-group">
+                        <label for="board-width">Width (inches)</label>
+                        <input type="number" id="board-width" class="form-control" min="8" max="36" value="12" step="0.5">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="board-length">Length (inches)</label>
+                        <input type="number" id="board-length" class="form-control" min="8" max="36" value="18" step="0.5">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="board-thickness">Thickness (inches)</label>
+                        <select id="board-thickness" class="form-control">
+                            
+                            <option value="2.25">2.25" Professional</option>
+                            <option value="3">3" Super Premium</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Options</label>
+                    
+                        <div class="checkbox-container">
+                            <label for="handle-juice-groove">Add Juice Groove (+$25)</label>
+                            <input type="checkbox" id="handle-juice-groove" name="features">
+                        </div>
+                    
+                        <div class="checkbox-container">
+                            <label for="engrave">Add Engraving (+$25)</label>
+                            <input type="checkbox" id="engrave" name="features">
+                        </div>
+                        <div class="checkbox-container">
+                            <label for="feet">Add Rubber Feet (+$25)</label>
+                            <input type="checkbox" id="feet" name="features">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" id="engraving-text-group" style="display: none;">
+                        <label for="engraving-text">Engraving Text</label>
+                        <input type="text" id="engraving-text" class="form-control" placeholder="Enter text for engraving">
+                    </div>
+                </div>
+                
+                <div class="preview-container">
+                    <h3>Board Preview</h3>
+                    <div class="board-preview" id="board-preview" style="width: 150px; height: 225px;"></div>
+                    
+                    <div class="price-display" id="price-display">$216.00</div>
+                    
+                    <ul class="features-list">
+                        <li>Premium Maple End Grain</li>
+                        <li>Food-grade plant based oil finish</li>
+                        <li>Custom Size to Your Specifications</li>
+                        <li>Hand-finished</li>
+                        <li>Double-sided</li>
+                        <li>Optional non-slip Rubber Feet</li>
+                    </ul>
+                    
+                    <button class="order-button">Order Custom Board</button>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2 class="section-title">Why Choose Our Cutting Boards?</h2>
+            <p>At Knob Hill Studios, we take pride in our craftsmanship and attention to detail. Each cutting board is handcrafted with care, ensuring that you receive a unique, high-quality piece that will last for years.</p>
+            
+            <div class="split-section">
+                <article class="split-item">
+                    <h3>Superior Quality</h3>
+                    <p>Our cutting boards are made from select grade maple, known for its durability and gentle treatment of knife edges. The end grain construction provides a self-healing surface that will stand up to years of use.</p>
+                </article>
+                
+                <article class="split-item">
+                    <h3>Sustainable Materials</h3>
+                    <p>We source our wood from sustainable forests and local suppliers whenever possible. Our commitment to environmental responsibility means you can enjoy your cutting board with peace of mind.</p>
+                </article>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -56,6 +387,96 @@
         <p>&copy; 2025 Knob Hill Studios. All rights reserved.</p>
     </footer>
     <a href="contact-us.html" class="fixed-contact">Contact Us</a>
+    
+    <script>
+        // Custom Board Builder Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all form inputs
+            const widthInput = document.getElementById('board-width');
+            const lengthInput = document.getElementById('board-length');
+            const thicknessSelect = document.getElementById('board-thickness');
+            const juiceGrooveCheckbox = document.getElementById('handle-juice-groove');
+            const engraveCheckbox = document.getElementById('engrave');
+            const engravingTextGroup = document.getElementById('engraving-text-group');
+            const boardPreview = document.getElementById('board-preview');
+            const priceDisplay = document.getElementById('price-display');
+            
+            // Base price per square inch
+            const pricePerSquareInch = 0.45;
+            
+            // Update the board preview and price
+            function updateBoardPreview() {
+                // Get current values
+                const width = parseFloat(widthInput.value);
+                const length = parseFloat(lengthInput.value);
+                const thickness = parseFloat(thicknessSelect.value);
+                
+                // Calculate square inches
+                const squareInches = width * length * thickness;
+                
+                // Calculate base price
+                let price = squareInches * pricePerSquareInch;
+                if (width < 8 || length < 8 || width > 36 || length > 36) {
+                priceDisplay.textContent = "Enter valid dimensions (8-36 inches)";
+                return;
+                }
+
+                // Add options
+                if (juiceGrooveCheckbox.checked) {
+                    price += 25;
+                }
+                
+                if (engraveCheckbox.checked) {
+                    price += 25;
+                }
+                
+                // Update price display
+                priceDisplay.textContent = '$' + price.toFixed(2);
+                
+                // Update preview dimensions
+                // We're scaling down for display purposes
+                const scale = Math.min(150 / width, 225 / length);
+                const displayWidth = width * scale;
+                const displayLength = length * scale;
+                
+                boardPreview.style.width = displayWidth + 'px';
+                boardPreview.style.height = displayLength + 'px';
+                
+                // Add juice groove visual if selected
+                if (juiceGrooveCheckbox.checked) {
+                    boardPreview.style.border = '2px solid #dbc192';
+                    boardPreview.style.boxShadow = 'inset 0 0 0 3px #f5e8d0';
+                } else {
+                    boardPreview.style.border = '2px solid #dbc192';
+                    boardPreview.style.boxShadow = 'none';
+                }
+                
+                // Add engraving visual if selected
+                if (engraveCheckbox.checked) {
+                    const engravingText = document.getElementById('engraving-text').value || 'Your Text Here';
+                    boardPreview.innerHTML = `<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: ${Math.min(10, displayWidth / 10)}px; color: #93661c;">${engravingText}</div>`;
+                } else {
+                    boardPreview.innerHTML = '';
+                }
+            }
+            
+            // Add event listeners to form inputs
+            widthInput.addEventListener('input', updateBoardPreview);
+            lengthInput.addEventListener('input', updateBoardPreview);
+            thicknessSelect.addEventListener('change', updateBoardPreview);
+            juiceGrooveCheckbox.addEventListener('change', function () {
+            this.parentElement.classList.toggle('selected', this.checked);
+        });
+
+            engraveCheckbox.addEventListener('change', function () {
+            this.parentElement.classList.toggle('selected', this.checked);
+        });
+
+            document.getElementById('engraving-text').addEventListener('input', updateBoardPreview);
+            
+            // Initialize preview on page load
+            updateBoardPreview();
+        });
+    </script>
 </body>
 </html>
-

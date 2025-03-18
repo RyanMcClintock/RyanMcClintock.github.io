@@ -304,7 +304,7 @@ footer {
 */
 .hero {
     width: 100vw;
-    height: 15vh; /* Use 40vh for a larger banner */
+    height: 15vh; /* Overal Hero heighth */
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
     overflow: hidden;
