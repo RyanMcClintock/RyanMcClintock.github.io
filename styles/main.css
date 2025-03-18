@@ -80,7 +80,7 @@ header {
     justify-content: space-between;
     background-color: #030404;
     border-bottom: 2px solid #222;
-    padding: 10px 20px;
+    padding: 5px 10px;
     height: auto;
 }
 
@@ -98,8 +98,9 @@ header {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    align-items: center;
-    padding: 10px;
+    align-items: flex-end;
+    padding: 5px 10px;
+    margin-bottom: 0;
 }
 
 #navbar ul {
@@ -110,11 +111,16 @@ header {
 }
 
 #navbar li {
-    padding: 8px 12px;
+    padding: 8px 16px;
     position: relative;
     transition: transform 0.3s ease;
 }
-
+/* More padding for navbar items */
+#navbar ul li {
+    padding: 0px 16px; /* Reduced from 8px 12px */
+    position: relative;
+    transition: transform 0.3s ease;
+}
 /* Base link styling */
 #navbar a {
     display: block;
